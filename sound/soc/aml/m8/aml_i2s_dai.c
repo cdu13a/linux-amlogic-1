@@ -97,6 +97,7 @@ static struct channel_speaker_allocation channel_allocations[] = {
 /* extern int set_i2s_iec958_samesource(int enable); */
 #define DEFAULT_SAMPLERATE 48000
 #define DEFAULT_MCLK_RATIO_SR 256
+#define MCLK_RATIO_128FS_SR 128
 
 /*
 the I2S hw  and IEC958 PCM output initation,958 initation here,
@@ -383,7 +384,7 @@ static int aml_i2s_set_amclk(struct aml_i2s *i2s, unsigned long rate)
 	if (ret)
 		return ret;
 
-	audio_set_i2s_clk_div();
+	audio_set_i2s_clk_div(i2s->old_samplerate);
 
 	return 0;
 }
@@ -485,7 +486,10 @@ static int aml_dai_i2s_hw_params(struct snd_pcm_substream *substream,
 	srate = params_rate(params);
 	if (i2s->old_samplerate != srate) {
 		i2s->old_samplerate = srate;
-		mclk_rate = srate * DEFAULT_MCLK_RATIO_SR;
+		if (srate > 192000)
+			mclk_rate = srate * MCLK_RATIO_128FS_SR;
+		else
+			mclk_rate = srate * DEFAULT_MCLK_RATIO_SR;
 		aml_i2s_set_amclk(i2s, mclk_rate);
 	}
 
@@ -536,7 +540,7 @@ static int aml_dai_i2s_resume(struct snd_soc_dai *dai)
 	return 0;
 }
 
-#define AML_DAI_I2S_RATES		SNDRV_PCM_RATE_32000 | SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 | SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 | SNDRV_PCM_RATE_176400 | SNDRV_PCM_RATE_192000
+#define AML_DAI_I2S_RATES		SNDRV_PCM_RATE_32000 | SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 | SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 | SNDRV_PCM_RATE_176400 | SNDRV_PCM_RATE_192000 | SNDRV_PCM_RATE_352800 | SNDRV_PCM_RATE_384000
 #define AML_DAI_I2S_FORMATS		SNDRV_PCM_FMTBIT_S16_LE | SNDRV_PCM_FMTBIT_S32_LE
 
 static struct snd_soc_dai_ops aml_dai_i2s_ops = {
