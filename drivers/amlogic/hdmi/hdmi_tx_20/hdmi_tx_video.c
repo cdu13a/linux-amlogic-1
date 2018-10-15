@@ -881,7 +881,7 @@ void hdmitx_output_rgb(void)
 
 static int is_philips_2009(struct rx_cap *pRXCap)
 {
-	if ((strncmp(pRXCap->ReceiverBrandName, "PHL", strlen(pRXCap->ReceiverBrandName)) == 0) && \
+	if ((strncmp(pRXCap->IDManufacturerName, "PHL", strlen(pRXCap->IDManufacturerName)) == 0) && \
 		(strncmp(pRXCap->ReceiverProductName, "Philips", strlen(pRXCap->ReceiverProductName)) == 0) && \
 		(pRXCap->manufacture_year == 19)) {
 		hdmi_print(INF, SYS, "This is a 2009 Philips TV which misreports colour caps");
@@ -950,7 +950,8 @@ int hdmitx_set_display(struct hdmitx_dev *hdev, enum hdmi_vic VideoCode)
 			}
 			if (VideoCode >= HDMITX_VESA_OFFSET) {
 				hdev->para->cs = COLORSPACE_RGB444;
-				pr_info("hdmitx: VESA only support RGB format\n");
+				hdev->para->cd = COLORDEPTH_24B;
+				pr_info("hdmitx: VESA only support RGB 8bit format\n");
 			}
 		}
 		if (hdev->HWOp.SetDispMode(hdev) >= 0) {

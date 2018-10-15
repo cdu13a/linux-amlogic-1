@@ -1252,8 +1252,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 25175000,
-		.htotal            = 800,
-		.vtotal            = 525,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1269,8 +1267,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 16,
 		.screen_real_height = 9,
 		.video_clk         = 29760000,
-		.htotal            = 0,
-		.vtotal            = 0,
 		.viu_color_fmt     = TVIN_YUV444,/* TODO */
 	},
 	{
@@ -1286,8 +1282,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 30240000,
-		.htotal            = 1056,
-		.vtotal            = 628,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1303,8 +1297,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 16,
 		.screen_real_height = 9,
 		.video_clk         = 30240000,
-		.htotal            = 948,
-		.vtotal            = 532,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1320,8 +1312,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 16,
 		.screen_real_height = 9,
 		.video_clk         = 40000000,
-		.htotal            = 950,
-		.vtotal            = 531,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1349,8 +1339,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 79500000,
-		.htotal            = 1344,
-		.vtotal            = 806,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1366,8 +1354,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 108000000,
-		.htotal            = 1600,
-		.vtotal            = 900,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1395,8 +1381,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 5,
 		.screen_real_height = 3,
 		.video_clk         = 79500000,
-		.htotal            = 1664,
-		.vtotal            = 798,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1412,8 +1396,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 8,
 		.screen_real_height = 5,
 		.video_clk         = 71107200,
-		.htotal            = 1680,
-		.vtotal            = 831,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1429,8 +1411,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 108000000,
-		.htotal            = 1800,
-		.vtotal            = 1000,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1446,8 +1426,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 5,
 		.screen_real_height = 4,
 		.video_clk         = 108000000,
-		.htotal            = 1688,
-		.vtotal            = 1066,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1463,8 +1441,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 16,
 		.screen_real_height = 9,
 		.video_clk         = 85500000,
-		.htotal            = 1792,
-		.vtotal            = 795,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1480,8 +1456,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 16,
 		.screen_real_height = 9,
 		.video_clk         = 85500000,
-		.htotal		= 1792,
-		.vtotal		= 798,
 		.viu_color_fmt     = TVIN_YUV444,
 
 	},
@@ -1498,8 +1472,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 1217500000,
-		.htotal		= 1864,
-		.vtotal		= 1089,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1515,8 +1487,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 8,
 		.screen_real_height = 5,
 		.video_clk         = 106500000,
-		.htotal		= 1904,
-		.vtotal		= 934,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1532,8 +1502,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 16,
 		.screen_real_height = 9,
 		.video_clk         = 108000000,
-		.htotal		= 1800,
-		.vtotal		= 1000,
 		.viu_color_fmt	= TVIN_YUV444,
 	},
 	{
@@ -1549,8 +1517,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 4,
 		.screen_real_height = 3,
 		.video_clk         = 162000000,
-		.htotal		= 2160,
-		.vtotal		= 1250,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1566,8 +1532,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 8,
 		.screen_real_height = 5,
 		.video_clk         = 146250000,
-		.htotal		= 2240,
-		.vtotal		= 1089,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1583,8 +1547,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 8,
 		.screen_real_height = 5,
 		.video_clk         = 193250000,
-		.htotal		= 2592,
-		.vtotal		= 1245,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
@@ -1636,8 +1598,6 @@ static struct vinfo_s tv_info[] = {
 		.screen_real_width = 8,
 		.screen_real_height = 5,
 		.video_clk         = 348500000,
-		.htotal		= 3504,
-		.vtotal		= 1658,
 		.viu_color_fmt     = TVIN_YUV444,
 	},
 	{
