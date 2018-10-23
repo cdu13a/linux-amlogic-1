@@ -340,4 +340,8 @@ struct hdmitx_info {
 	/* ------------------------------------------------------- */
 };
 
+#define VOUTMODE_HDMI           0x00
+#define VOUTMODE_DVI            0x01
+int aml_voutmode(void);
+
 #endif  /* _HDMI_RX_GLOBAL_H */
