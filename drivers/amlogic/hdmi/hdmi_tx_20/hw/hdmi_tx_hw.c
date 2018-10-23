@@ -2192,6 +2192,8 @@ next:
 	hdmitx_set_reg_bits(HDMITX_DWC_FC_INVIDCONF, 0, 3, 1);
 	mdelay(1);
 	hdmitx_set_reg_bits(HDMITX_DWC_FC_INVIDCONF, 1, 3, 1);
+    
+    hdmitx_hdmi_dvi_config(hdev, aml_voutmode() != VOUTMODE_HDMI);
 
 	return 0;
 }
@@ -5090,3 +5092,20 @@ static void hdmitx_set_hw(struct hdmitx_dev *hdev)
 			hdev->para->cs);
 	return;
 }
+
+static int dvi_mode = VOUTMODE_HDMI;
+
+int aml_voutmode(void)
+{
+	return dvi_mode;
+}
+EXPORT_SYMBOL(aml_voutmode);
+
+static  int __init vout_setup(char *s)
+{
+	dvi_mode = VOUTMODE_HDMI;
+	if (!strcmp(s, "dvi"))
+		dvi_mode = VOUTMODE_DVI;
+	return 0;
+}
+__setup("vout_mode=", vout_setup);

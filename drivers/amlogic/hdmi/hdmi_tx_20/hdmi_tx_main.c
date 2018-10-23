@@ -610,7 +610,7 @@ static int set_disp_mode_auto(void)
 	if ((vic_ready != HDMI_Unkown) && (vic_ready == vic)) {
 		hdmi_print(IMP, SYS "[%s] ALREADY init VIC = %d\n",
 			__func__, vic);
-		if (hdev->RXCap.IEEEOUI == 0) {
+		if (hdev->RXCap.IEEEOUI == 0 || aml_voutmode()) {
 			/* DVI case judgement. In uboot, directly output HDMI
 			 * mode
 			 */
